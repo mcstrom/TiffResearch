@@ -17,6 +17,8 @@ class HospitalStay:
         self.discharge_date_from_data = discharge_date_from_data
         # self.admission_date_unstripped = admission_date
         # self.discharge_date_unstripped = discharge_date
+        self.is_all_oral = all("oral" in day.route_of_administration for day in self.service_days)
+        self.is_all_parenteral = all("parenteral" in day.route_of_administration for day in self.service_days)
 
         # Now calculate if patient was observed or not. Default behavior is not observed or false
         self.is_observed = False

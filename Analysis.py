@@ -129,20 +129,20 @@ def write_to_csv(patients):
                             'Discharge Date Calculated', 'Discharge Date From Data', 'Principal Diagnosis',
                             'Hospital Location', 'Age', 'Gender', 'Race', 'Ethnicity', 'Payment Info',
                             'Vanco First Day', 'Readmission, Observed Previous Stay',
-                            'Readmission, Unobserved Previous Stay', 'Observed Stay'])
+                            'Readmission, Unobserved Previous Stay', 'Observed Stay', 'All Oral', 'All Parenteral'])
         for patient in patients:
             for stay in patient.hospital_stays:
                value = [patient.patient_id, stay.discharge_id, str(stay.admission_date)[0:-8],
                         stay.admission_date_from_data, str(stay.discharge_date)[0:-8], stay.discharge_date_from_data,
                         stay.principal_diagnosis, stay.hospital_location, patient.admit_age, patient.gender,
                         patient.race, patient.ethnicity, stay.payment_info, stay.is_vanco_first_day, stay.is_bounceback,
-                        stay.is_unobserved_bounceback, stay.is_observed]
+                        stay.is_unobserved_bounceback, stay.is_observed, stay.is_all_oral, stay.is_all_parenteral]
                thewriter.writerow(value)
 
 
 def main():
 
-    with open('./2017_Draft_Data_Copy_CSV.csv', newline='') as csvfile:  # ./ just means to look in current directory
+    with open('./Clean_Data.csv', newline='') as csvfile:  # ./ just means to look in current directory
         # Bringing in data
         data_values = [] # data values is a list of dictionaries copied from the dict reader object
         data_object = csv.DictReader(csvfile) # now we can reference specific things
@@ -214,6 +214,7 @@ def main():
             total_number_of_unobserved_bouncebacks += patient.unobserved_bouncebacks
             total_number_of_readmissions += patient.total_readmissions
             total_number_of_observed_stays += patient.total_observed_stays
+
 
         total_number_of_unobserved_stays = total_number_of_stays - total_number_of_observed_stays
 

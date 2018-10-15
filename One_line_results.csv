@@ -1,0 +1,6 @@
+Patient ID,Discharge ID,Admit Date Calculated,Admit Date From Data,Discharge Date Calculated,Discharge Date From Data,Principal Diagnosis,Hospital Location,Age,Gender,Race,Ethnicity,Payment Info,Vanco First Day,"Readmission, Observed Previous Stay","Readmission, Unobserved Previous Stay",Observed Stay,All Oral,All Parenteral
+8,4,2017-02-07 ,2/7/2017,2017-02-09 ,2/9/2017,#N/A,Chicago - Lurie,1,Male,Race - Other,Hispanic or Latino,In-State Medicaid (managed care),False,False,False,False,False,True
+6,2,2017-03-09 ,3/10/2017,2017-03-14 ,3/14/2017,#N/A,Omaha,15,Male,Race - Other,Hispanic or Latino,In-State Medicaid (managed care),True,False,False,False,False,True
+5,1,2017-02-21 ,2/21/2017,2017-02-23 ,2/23/2017,#N/A,Omaha,2,Male,Race - White,Not Hispanic or Latino,Out-of-State Medicaid (all),False,False,False,False,False,True
+7,3,2017-01-28 ,1/28/2017,2017-01-31 ,1/31/2017,#N/A,Chicago - Lurie,3,Female,Race - Black,Not Hispanic or Latino,In-State Medicaid (other),False,False,False,False,True,False
+9,5,2017-02-09 ,2/7/2017,2017-02-09 ,2/9/2017,#N/A,Chicago - Lurie,1,Male,Race - None Specified,Hispanic or Latino,In-State Medicaid (managed care),False,False,False,False,False,True
