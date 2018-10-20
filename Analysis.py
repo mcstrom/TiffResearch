@@ -130,7 +130,7 @@ def write_to_csv(patients):
                             'Hospital Location', 'Age', 'Gender', 'Race', 'Ethnicity', 'Payment Info',
                             'Vanco First Day', 'Readmission, Observed Previous Stay',
                             'Readmission, Unobserved Previous Stay', 'Observed Stay', 'All Oral', 'All Parenteral',
-                            'Vanco First Day', 'Parenteral Day of Admission'])
+                            'Vanco First Day', 'Parenteral on Day of Admission'])
         for patient in patients:
             for stay in patient.hospital_stays:
                value = [patient.patient_id, stay.discharge_id, str(stay.admission_date)[0:-8],

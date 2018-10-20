@@ -25,7 +25,7 @@ class HospitalStay:
         # Now calculate if patient was observed or not. Default behavior is not observed or false
         self.is_observed = False
         if len(self.service_days) > 1:
-            self.is_observed = "oral" in self.service_days[-1].route_of_administration and \
+            self.is_observed = "parenteral" not in self.service_days[-1].route_of_administration and \
                                "oral" in self.service_days[-2].route_of_administration and \
                                "parenteral" in self.service_days[0].route_of_administration
 
