@@ -129,14 +129,16 @@ def write_to_csv(patients):
                             'Discharge Date Calculated', 'Discharge Date From Data', 'Principal Diagnosis',
                             'Hospital Location', 'Age', 'Gender', 'Race', 'Ethnicity', 'Payment Info',
                             'Vanco First Day', 'Readmission, Observed Previous Stay',
-                            'Readmission, Unobserved Previous Stay', 'Observed Stay', 'All Oral', 'All Parenteral'])
+                            'Readmission, Unobserved Previous Stay', 'Observed Stay', 'All Oral', 'All Parenteral',
+                            'Vanco First Day', 'Parenteral Day of Admission'])
         for patient in patients:
             for stay in patient.hospital_stays:
                value = [patient.patient_id, stay.discharge_id, str(stay.admission_date)[0:-8],
                         stay.admission_date_from_data, str(stay.discharge_date)[0:-8], stay.discharge_date_from_data,
                         stay.principal_diagnosis, stay.hospital_location, patient.admit_age, patient.gender,
                         patient.race, patient.ethnicity, stay.payment_info, stay.is_vanco_first_day, stay.is_bounceback,
-                        stay.is_unobserved_bounceback, stay.is_observed, stay.is_all_oral, stay.is_all_parenteral]
+                        stay.is_unobserved_bounceback, stay.is_observed, stay.is_all_oral, stay.is_all_parenteral,
+                        stay.is_vanco_first_day, stay.is_parenteral_first_day]
                thewriter.writerow(value)
 
 

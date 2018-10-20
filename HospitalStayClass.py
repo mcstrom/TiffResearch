@@ -17,8 +17,10 @@ class HospitalStay:
         self.discharge_date_from_data = discharge_date_from_data
         # self.admission_date_unstripped = admission_date
         # self.discharge_date_unstripped = discharge_date
-        self.is_all_oral = all("oral" in day.route_of_administration for day in self.service_days)
-        self.is_all_parenteral = all("parenteral" in day.route_of_administration for day in self.service_days)
+        self.is_all_oral = all("parenteral" not in day.route_of_administration for day in self.service_days)
+        self.is_all_parenteral = all("oral" not in day.route_of_administration for day in self.service_days)
+        self.is_vanco_first_day = 'Vancomycin (HCl)' in self.service_days[0].drug_title
+        self.is_parenteral_first_day = "parenteral" in self.service_days[0].route_of_administration
 
         # Now calculate if patient was observed or not. Default behavior is not observed or false
         self.is_observed = False
@@ -27,7 +29,7 @@ class HospitalStay:
                                "oral" in self.service_days[-2].route_of_administration and \
                                "parenteral" in self.service_days[0].route_of_administration
 
-        self.is_vanco_first_day = 'Vancomycin (HCl)' in self.service_days[0].drug_title
+
 
 
 
