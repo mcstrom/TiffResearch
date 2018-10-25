@@ -25,6 +25,15 @@ class HospitalStay:
         self.is_Penicillin_G_in_stay = any("Penicillin G (aqueous) (potassium) (sodium)" in day.drug_title for day in self.service_days)
         self.is_Ceftriaxone_sodium_in_stay = any("Ceftriaxone sodium" in day.drug_title for day in self.service_days)
         self.is_Cefazolin_sodium_in_stay = any("Cefazolin sodium" in day.drug_title for day in self.service_days)
+        self.is_Clindamycin_in_stay = any("Clindamycin (HCl) (palmitate) (phosphate)" in day.drug_title for day in self.service_days)
+        self.is_Vancomycin_in_stay = any("Vancomycin (HCl)" in day.drug_title for day in self.service_days)
+        self.is_Ampicillin_in_stay = any("Ampicillin sodium and sulbactam sodium" in day.drug_title for day in self.service_days)
+        self.is_Doxycycline_in_stay = any("Doxycycline (calcium) (hyclate) (monohydrate)" in day.drug_title for day in self.service_days)
+        self.is_Cephalexin_in_stay = any("Cephalexin (HCl) (monohydrate)" in day.drug_title for day in self.service_days)
+        self.is_Sulfamethoxazole_in_stay = any("Sulfamethoxazole and trimethoprim (co-trimoxazole)" in day.drug_title for day in self.service_days)
+        self.is_Linezolid_in_stay = any("Linezolid" in day.drug_title for day in self.service_days)
+        self.is_Amoxicillin_t_and_pot_c_in_stay = any("Amoxicillin trihydrate and potassium clavulanate" in day.drug_title for day in self.service_days)
+        self.is_Amoxicillin_trihydrate_in_stay = any("Amoxicillin trihydrate" in day.drug_title for day in self.service_days)
 
         # Now calculate if patient was observed or not. Default behavior is not observed or false
         self.is_observed = False

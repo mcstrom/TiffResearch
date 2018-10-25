@@ -131,7 +131,11 @@ def write_to_csv(patients):
                             'Vanco First Day', 'Readmission, Observed Previous Stay',
                             'Readmission, Unobserved Previous Stay', 'Observed Stay', 'All Oral', 'All Parenteral',
                             'Parenteral on Day of Admission', 'Penicillin V potassium',
-                            'Penicillin G (aqueous) (potassium) (sodium)', 'Ceftriaxone sodium', 'Cefazolin sodium'])
+                            'Penicillin G (aqueous) (potassium) (sodium)', 'Ceftriaxone sodium', 'Cefazolin sodium',
+                            'Clindamycin (HCl) (palmitate) (phosphate)', 'Vancomycin (HCl)',
+                            'Ampicillin sodium and sulbactam sodium', 'Doxycycline (calcium) (hyclate) (monohydrate)',
+                            'Cephalexin (HCl) (monohydrate)', 'Sulfamethoxazole and trimethoprim (co-trimoxazole)',
+                            'Linezolid', 'Amoxicillin trihydrate and potassium clavulanate', 'Amoxicillin trihydrate'])
         for patient in patients:
             for stay in patient.hospital_stays:
                value = [patient.patient_id, stay.discharge_id, str(stay.admission_date)[0:-8],
@@ -140,7 +144,11 @@ def write_to_csv(patients):
                         patient.race, patient.ethnicity, stay.payment_info, stay.is_vanco_first_day, stay.is_bounceback,
                         stay.is_unobserved_bounceback, stay.is_observed, stay.is_all_oral, stay.is_all_parenteral,
                         stay.is_parenteral_first_day, stay.is_Penicillin_V_in_stay, stay.is_Penicillin_G_in_stay,
-                        stay.is_Ceftriaxone_sodium_in_stay, stay.is_Cefazolin_sodium_in_stay]
+                        stay.is_Ceftriaxone_sodium_in_stay, stay.is_Cefazolin_sodium_in_stay,
+                        stay.is_Clindamycin_in_stay, stay.is_Vancomycin_in_stay, stay.is_Ampicillin_in_stay,
+                        stay.is_Doxycycline_in_stay, stay.is_Cephalexin_in_stay, stay.is_Sulfamethoxazole_in_stay,
+                        stay.is_Linezolid_in_stay, stay.is_Amoxicillin_t_and_pot_c_in_stay,
+                        stay.is_Amoxicillin_trihydrate_in_stay]
                thewriter.writerow(value)
 
 
