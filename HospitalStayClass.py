@@ -21,6 +21,10 @@ class HospitalStay:
         self.is_all_parenteral = all("oral" not in day.route_of_administration for day in self.service_days)
         self.is_vanco_first_day = 'Vancomycin (HCl)' in self.service_days[0].drug_title
         self.is_parenteral_first_day = "parenteral" in self.service_days[0].route_of_administration
+        self.is_Penicillin_V_in_stay = any("Penicillin V potassium" in day.drug_title for day in self.service_days)
+        self.is_Penicillin_G_in_stay = any("Penicillin G (aqueous) (potassium) (sodium)" in day.drug_title for day in self.service_days)
+        self.is_Ceftriaxone_sodium_in_stay = any("Ceftriaxone sodium" in day.drug_title for day in self.service_days)
+        self.is_Cefazolin_sodium_in_stay = any("Cefazolin sodium" in day.drug_title for day in self.service_days)
 
         # Now calculate if patient was observed or not. Default behavior is not observed or false
         self.is_observed = False

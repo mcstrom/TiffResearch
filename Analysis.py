@@ -130,7 +130,8 @@ def write_to_csv(patients):
                             'Hospital Location', 'Age', 'Gender', 'Race', 'Ethnicity', 'Payment Info',
                             'Vanco First Day', 'Readmission, Observed Previous Stay',
                             'Readmission, Unobserved Previous Stay', 'Observed Stay', 'All Oral', 'All Parenteral',
-                            'Vanco First Day', 'Parenteral on Day of Admission'])
+                            'Parenteral on Day of Admission', 'Penicillin V potassium',
+                            'Penicillin G (aqueous) (potassium) (sodium)', 'Ceftriaxone sodium', 'Cefazolin sodium'])
         for patient in patients:
             for stay in patient.hospital_stays:
                value = [patient.patient_id, stay.discharge_id, str(stay.admission_date)[0:-8],
@@ -138,7 +139,8 @@ def write_to_csv(patients):
                         stay.principal_diagnosis, stay.hospital_location, patient.admit_age, patient.gender,
                         patient.race, patient.ethnicity, stay.payment_info, stay.is_vanco_first_day, stay.is_bounceback,
                         stay.is_unobserved_bounceback, stay.is_observed, stay.is_all_oral, stay.is_all_parenteral,
-                        stay.is_vanco_first_day, stay.is_parenteral_first_day]
+                        stay.is_parenteral_first_day, stay.is_Penicillin_V_in_stay, stay.is_Penicillin_G_in_stay,
+                        stay.is_Ceftriaxone_sodium_in_stay, stay.is_Cefazolin_sodium_in_stay]
                thewriter.writerow(value)
 
 
